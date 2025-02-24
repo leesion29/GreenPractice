@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var e = {
+            target:{
+                value:50, name:'math'
+            }
+        }
+        // 객체 구조 분해 할당
+        const {value, name} = e.target; // e.target -> 현재 값을 가리키는 것
+        console.log(value, name);
+        var [a, ... b] = [1, 20, 30, 40, 50];
+        console.log(a, b);
+    </script>
+</body>
+</html>

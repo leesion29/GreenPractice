@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+const initialData = [1, 2, 3, 4, 5].map(no => ({
+  studentNo: no,
+  math: 0,
+  eng: 0,
+  korea: 0,
+  total: 0,
+  avg: 0,
+  grade: ""
+}));
+console.log(initialData);
+initialData.push({
+studentNo: 6,
+  math: 10,
+  eng: 53,
+  korea: 77,
+  total: 144,
+  avg: 46,
+  grade: "D"
+});
+console.log(initialData);
+for(let i = 0; i< initialData.length; i++) {
+    console.log(initialData[i]);
+}
+console.log("=======================");
+for(let i = 0; i< initialData.length; i++) {
+    console.log(initialData.shift());
+}
+
+for(let i = 0; i< initialData.length; i++) {
+    console.log(initialData.pop());
+}
+</script>
+</body>
+</html>
