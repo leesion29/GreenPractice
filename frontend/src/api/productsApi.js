@@ -27,7 +27,7 @@ export const deletOne = async (pno) => {
 };
 
 export const putOne = async (pno, product) => {
-  console.log("putOne api product:", product);
+  console.log("putOne api product:", prduct);
   const header = { headers: { "Content-Type": "multipart/form-data" } };
   const res = await axios.put(`${prefix}/${pno}`, product, header);
   return res.data;
