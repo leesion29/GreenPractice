@@ -3,10 +3,12 @@ package com.green.company.project1.config;
 import com.green.company.project1.security.filter.JWTCheckFilter;
 import com.green.company.project1.security.handler.APILoginFailureHandler;
 import com.green.company.project1.security.handler.APILoginSuccessHandler;
+import com.green.company.project1.security.handler.CustomAccessDeniedHandler;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -22,6 +24,7 @@ import java.util.Arrays;
 @Configuration
 @Slf4j
 @RequiredArgsConstructor
+@EnableMethodSecurity
 public class CustomSecurityConfig {
 
     @Bean
@@ -39,6 +42,7 @@ public class CustomSecurityConfig {
             i.failureHandler(new APILoginFailureHandler());
         });
         http.addFilterBefore(new JWTCheckFilter(), UsernamePasswordAuthenticationFilter.class);//JWT 체크
+        http.exceptionHandling(i->i.accessDeniedHandler((new CustomAccessDeniedHandler())));
         return http.build();
     }
     @Bean

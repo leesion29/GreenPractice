@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
 import org.springframework.core.io.Resource;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -35,6 +36,7 @@ public class ProductController {
         return  Map.of("result", pno);
     }
     // 파일 보여주기(브라우저)
+    @PreAuthorize("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')") // 임시 권한 설정
     @GetMapping("/view/{fileName}")
     public ResponseEntity<Resource> viewFileGer(@PathVariable String fileName) {
         log.info("파일 명 조회 : " + fileName);
