@@ -13,7 +13,7 @@ const Red = () => {
   useEffect(() => {
     const f = async () => {
       //문 1)  a?id=3&name=hong  =>의 값을  arr에서 꺼내어 전달하고 backend에서 확인함
-      const res = await axios.get(`${APILocation}/home/print?id=3&name=hong`);
+      const res = await axios.get(`${APILocation}/home/a?id=3&name=hong`);
       // const { data } = res;
       console.log(res.data);
     };

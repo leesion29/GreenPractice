@@ -1,14 +1,15 @@
-import { useEffect } from "react";
-import "./App.css";
-import axios from "axios";
-import Green from "./component/Green";
-import Yellow from "./component/Yellow";
-import AllList from "./component/AllList";
+import { Link, Outlet } from "react-router-dom";
 
-const APILocation = "http://localhost:8080";
 function App() {
-  return <><Yellow/>
-  <AllList/></>
+  return (
+    <>
+      <nav>
+        <Link to="/">홈</Link> | <Link to="/about">소개</Link> |{" "}
+        <Link to ="list">전체조회</Link> | <Link to="/add">추가</Link> | <Link to="/dong">동사무소 조회</Link>
+      </nav>
+      <Outlet /> {/* 자식 컴포넌트가 여기에 렌더링됨 */}
+    </>
+  );
 }
 
 export default App;
