@@ -10,6 +10,8 @@ import Create from "../components/Create";
 import View from "../components/View";
 import Del from "../components/Del";
 import Edit from "../components/Edit";
+import Dlist from "../components/DongsamusoList";
+import PostAndComment from "../components/PostAndComment";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -25,6 +27,8 @@ const router = createBrowserRouter([
       { path: "view", element: <View /> },
       { path: "del", element: <Del /> },
       { path: "edit", element: <Edit /> },
+      { path: "dlist", element: <Dlist /> },
+      { path: "post", element: <PostAndComment/>}
     ],
   },
 ]);

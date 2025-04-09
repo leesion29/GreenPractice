@@ -23,12 +23,14 @@ const View = () => {
           <th>주소</th>
           <th>나이</th>
           <th>가족 수</th>
+          <th>이름</th>
           <th>母</th>
           <th>父</th>
         </tr>
 
         {d &&
           d.map((d) => (
+            
             <tr>
                 <td>{d.no}</td>
                 <td>{d.jumin}</td>

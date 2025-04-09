@@ -1,6 +1,5 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
-import Create from './Create';
 
 const Town = () => {
     const nav = useNavigate();
