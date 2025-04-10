@@ -1,12 +1,15 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const PostAndComment = () => {
   const [p, setP] = useState([]);
+  const nav = useNavigate();
   useEffect(() => {
     const getPost = async () => {
       const { data } = await axios.get(`http://localhost:8080/post/list`);
       setP(data);
+      console.log(data);
     };
     getPost();
   }, []);
@@ -27,7 +30,7 @@ const PostAndComment = () => {
             <tr key={i.id}>
               <td style={{ border: "1px solid black", padding:"10px", backgroundColor:"#e0dede"}}>{i.id}</td>
               <td style={{ border: "1px solid black", padding:"10px" }}>{i.title}</td>
-              <td style={{ border: "1px solid black", padding:"10px", backgroundColor:"#f5f3df" }}>{i.content}</td>
+              <td style={{ border: "1px solid black", padding:"10px", backgroundColor:"#f5f3df" }}>{i.content} <button style = {{float:"right"}} onClick={()=>{nav(`/a/${i.id}`)}}>이동</button></td>
             </tr>
           ))}
         </tbody>

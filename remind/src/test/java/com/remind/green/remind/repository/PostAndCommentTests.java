@@ -1,7 +1,9 @@
 package com.remind.green.remind.repository;
 
 import com.remind.green.remind.entity.Comment;
+import com.remind.green.remind.entity.Member;
 import com.remind.green.remind.entity.Post;
+import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -67,6 +69,13 @@ public class PostAndCommentTests {
             }
         });
 
+    }
+
+    @Transactional
+    @Test
+    public void findByPostIDtest () {
+        List<Comment> list = commentRepository.findByPostId(1l);
+        System.out.println("list:" + list);
     }
 
 }

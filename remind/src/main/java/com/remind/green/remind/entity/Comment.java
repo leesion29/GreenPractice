@@ -7,7 +7,7 @@ import lombok.*;
 @Entity
 @Setter
 @Getter
-@ToString
+@ToString(exclude = "post")
 @AllArgsConstructor
 @NoArgsConstructor
 public class Comment {
