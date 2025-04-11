@@ -19,6 +19,7 @@ public class Member {
 
     private String email;
     private String name;
+    private int age;
     private String password;
     private String address;
     private String city;

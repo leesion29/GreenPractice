@@ -14,6 +14,7 @@ import Dlist from "../components/DongsamusoList";
 import PostAndComment from "../components/PostAndComment";
 import PostOne from "../components/PostOne";
 import LoginPage from "../components/LoginPage";
+import Hong from "../pages/Hong";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,9 +31,10 @@ const router = createBrowserRouter([
       { path: "del", element: <Del /> },
       { path: "edit", element: <Edit /> },
       { path: "dlist", element: <Dlist /> },
-      { path: "post", element: <PostAndComment/>},
-      { path: "a/:postId", element: <PostOne/>},
-      {path:"login", element: <LoginPage/>}
+      { path: "post", element: <PostAndComment /> },
+      { path: "a/:postId", element: <PostOne /> },
+      { path: "login", element: <LoginPage /> },
+      {path: "hong", element: <Hong/>}
     ],
   },
 ]);

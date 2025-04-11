@@ -7,15 +7,17 @@ import jakarta.persistence.Id;
 import lombok.*;
 
 
-@AllArgsConstructor
-@NoArgsConstructor
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class MemberDTO {
     private Long mno;
     private String email;
+    private int age;
     private String name;
     private String password;
     private String address;
     private String city;
+
 }
